@@ -1,0 +1,15 @@
+.Card {
+  width: 254px;
+  background-color: #fff;
+  margin-bottom: 32px;
+  margin: 24px 0 0 24px;
+  .ville {
+    font-size: 14px;
+  }
+  &:hover {
+    background-color: #F7F7F7;
+    outline: solid 12px #F7F7F7;
+    // transition: .6s;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,20 @@
+.CardContent {
+  &__title {
+    font-family: HelveticaNeue-Bold;
+    font-size: 28px;
+    color: #606060;
+    line-height: 32px;
+  }
+  &__address {
+    font-family: HelveticaNeue;
+    font-size: 15px;
+    color: #000000;
+    line-height: 24px;
+  }
+  &__description {
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    color: #000000;
+    line-height: 24px;
+  }
+}
