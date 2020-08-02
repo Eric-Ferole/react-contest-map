@@ -8,6 +8,7 @@ const CardContent = (props) => {
       <h2 className="CardContent__title">{props.titre}</h2> 
       <p className="CardContent__address">{props.address}</p>
       {console.log('CardContent: props', props)}
+      {console.log('CardContent: props.infos.candidatDetails', props.candidatDetails.infos.titre)}
       {console.log('CardContent: props.titre', props.titre)}
       <p className="CardContent__description">{props.description}</p>
     </div>

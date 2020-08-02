@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Data 
+import candidatures from '../src/data/candidatures';
+
+// Style
+import './components/CardList/CardList';
+
+// Components
+import CardList from './components/CardList/CardList';
+import Map from './components/Map/Map';
+import CardDetails from './container/CardDetails/CardDetails';
+import Header from './components/Header/Header';
+
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      candidatures: candidatures,
+      selectedCard: null,
+    };
+
+  }
+
+  selectCard = (index) => {
+    this.setState({ selectedCard: candidatures[index] });
+  }
+  render() {
+        return(
+      <div>
+        <CardDetails candidatDetails={this.state.selectedCard} />
+        {console.log(this.state.selectedCard)}
+        <Header/>
+        <div className="wrapper">
+          <CardList
+            candidatures={this.state.candidatures}
+            selectedCard={this.state.selectedCard}
+            selectCard={this.selectCard}
+          />
+          <Map candidatures={candidatures} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
